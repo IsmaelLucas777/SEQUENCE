@@ -1,0 +1,9 @@
+{
+  "name":"SEQUENCE",
+  "short_name":"SEQUENCE",
+  "start_url":"./index.html",
+  "display":"standalone",
+  "background_color":"#030507",
+  "theme_color":"#030507",
+  "icons":[{"src":"icons/icon.svg","sizes":"any","type":"image/svg+xml"}]
+}

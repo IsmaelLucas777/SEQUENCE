@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#05070a">
+<link rel="manifest" href="manifest.json">
+<title>SEQUENCE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand">
+      <div class="mini-flame" id="miniFlame"><svg class="flame-svg" viewBox="0 0 200 230" aria-hidden="true">
+<path class="flame-glow" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer flame-side-left" d="M52 75 C45 86 41 100 42 115 C43 130 49 143 59 151 C61 139 66 128 75 118 C67 108 59 94 52 75 Z"/>
+<path class="flame-outer flame-side-right" d="M151 77 C159 89 163 103 161 117 C159 132 153 144 143 152 C141 139 136 128 126 118 C135 108 143 94 151 77 Z"/>
+<path class="flame-inner" d="M101 54 C114 69 122 85 123 101 C124 111 121 119 116 128 C128 122 140 126 145 138 C150 151 143 165 132 175 C120 185 104 190 90 186 C75 182 65 172 64 160 C62 148 69 136 80 128 C88 122 92 115 92 106 C92 88 96 68 101 54 Z"/>
+<path class="flame-core" d="M101 111 C110 123 114 136 112 148 C119 147 124 152 124 160 C124 171 115 179 104 181 C93 182 84 175 84 165 C84 156 91 150 96 143 C99 136 99 124 101 111 Z"/>
+</svg></div>
+      <b>SEQUENCE</b>
+    </div>
+    <button class="dots" id="dots">⋮</button>
+    <div class="menu" id="menu">
+      <button id="restart">↻ <span>Reiniciar sequência</span></button>
+      <button id="debug">⚙ <span>Debug</span></button>
+      <button id="soundBtn" class="soundBtn">🔊 <span>Som: ligado</span></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="big-flame" id="bigFlame"><svg class="flame-svg" viewBox="0 0 200 230" aria-hidden="true">
+<path class="flame-glow" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer flame-side-left" d="M52 75 C45 86 41 100 42 115 C43 130 49 143 59 151 C61 139 66 128 75 118 C67 108 59 94 52 75 Z"/>
+<path class="flame-outer flame-side-right" d="M151 77 C159 89 163 103 161 117 C159 132 153 144 143 152 C141 139 136 128 126 118 C135 108 143 94 151 77 Z"/>
+<path class="flame-inner" d="M101 54 C114 69 122 85 123 101 C124 111 121 119 116 128 C128 122 140 126 145 138 C150 151 143 165 132 175 C120 185 104 190 90 186 C75 182 65 172 64 160 C62 148 69 136 80 128 C88 122 92 115 92 106 C92 88 96 68 101 54 Z"/>
+<path class="flame-core" d="M101 111 C110 123 114 136 112 148 C119 147 124 152 124 160 C124 171 115 179 104 181 C93 182 84 175 84 165 C84 156 91 150 96 143 C99 136 99 124 101 111 Z"/>
+</svg></div>
+      <div class="count" id="count">1</div>
+      <div class="subtitle" id="subtitle">dia de ofensiva</div>
+    </div>
+
+    <div class="midnight">
+      <span>☼</span>
+      <span>Próxima meia-noite: <b id="timer">--:--:--</b></span>
+    </div>
+    <div class="risk" id="risk">🔥 Sua ofensiva está em risco — falta menos de 1h30 para meia-noite.</div>
+
+    <button class="today" id="today">▣ &nbsp; MARCAR HOJE</button>
+
+    <div class="levels">
+      <div><i class="lvl yellow"><svg class="flame-svg" viewBox="0 0 200 230" aria-hidden="true">
+<path class="flame-glow" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer flame-side-left" d="M52 75 C45 86 41 100 42 115 C43 130 49 143 59 151 C61 139 66 128 75 118 C67 108 59 94 52 75 Z"/>
+<path class="flame-outer flame-side-right" d="M151 77 C159 89 163 103 161 117 C159 132 153 144 143 152 C141 139 136 128 126 118 C135 108 143 94 151 77 Z"/>
+<path class="flame-inner" d="M101 54 C114 69 122 85 123 101 C124 111 121 119 116 128 C128 122 140 126 145 138 C150 151 143 165 132 175 C120 185 104 190 90 186 C75 182 65 172 64 160 C62 148 69 136 80 128 C88 122 92 115 92 106 C92 88 96 68 101 54 Z"/>
+<path class="flame-core" d="M101 111 C110 123 114 136 112 148 C119 147 124 152 124 160 C124 171 115 179 104 181 C93 182 84 175 84 165 C84 156 91 150 96 143 C99 136 99 124 101 111 Z"/>
+</svg></i><span>1</span></div>
+      <div><i class="lvl red"><svg class="flame-svg" viewBox="0 0 200 230" aria-hidden="true">
+<path class="flame-glow" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer flame-side-left" d="M52 75 C45 86 41 100 42 115 C43 130 49 143 59 151 C61 139 66 128 75 118 C67 108 59 94 52 75 Z"/>
+<path class="flame-outer flame-side-right" d="M151 77 C159 89 163 103 161 117 C159 132 153 144 143 152 C141 139 136 128 126 118 C135 108 143 94 151 77 Z"/>
+<path class="flame-inner" d="M101 54 C114 69 122 85 123 101 C124 111 121 119 116 128 C128 122 140 126 145 138 C150 151 143 165 132 175 C120 185 104 190 90 186 C75 182 65 172 64 160 C62 148 69 136 80 128 C88 122 92 115 92 106 C92 88 96 68 101 54 Z"/>
+<path class="flame-core" d="M101 111 C110 123 114 136 112 148 C119 147 124 152 124 160 C124 171 115 179 104 181 C93 182 84 175 84 165 C84 156 91 150 96 143 C99 136 99 124 101 111 Z"/>
+</svg></i><span>50</span></div>
+      <div><i class="lvl purple"><svg class="flame-svg" viewBox="0 0 200 230" aria-hidden="true">
+<path class="flame-glow" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer flame-side-left" d="M52 75 C45 86 41 100 42 115 C43 130 49 143 59 151 C61 139 66 128 75 118 C67 108 59 94 52 75 Z"/>
+<path class="flame-outer flame-side-right" d="M151 77 C159 89 163 103 161 117 C159 132 153 144 143 152 C141 139 136 128 126 118 C135 108 143 94 151 77 Z"/>
+<path class="flame-inner" d="M101 54 C114 69 122 85 123 101 C124 111 121 119 116 128 C128 122 140 126 145 138 C150 151 143 165 132 175 C120 185 104 190 90 186 C75 182 65 172 64 160 C62 148 69 136 80 128 C88 122 92 115 92 106 C92 88 96 68 101 54 Z"/>
+<path class="flame-core" d="M101 111 C110 123 114 136 112 148 C119 147 124 152 124 160 C124 171 115 179 104 181 C93 182 84 175 84 165 C84 156 91 150 96 143 C99 136 99 124 101 111 Z"/>
+</svg></i><span>100</span></div>
+      <div><i class="lvl blue"><svg class="flame-svg" viewBox="0 0 200 230" aria-hidden="true">
+<path class="flame-glow" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer flame-side-left" d="M52 75 C45 86 41 100 42 115 C43 130 49 143 59 151 C61 139 66 128 75 118 C67 108 59 94 52 75 Z"/>
+<path class="flame-outer flame-side-right" d="M151 77 C159 89 163 103 161 117 C159 132 153 144 143 152 C141 139 136 128 126 118 C135 108 143 94 151 77 Z"/>
+<path class="flame-inner" d="M101 54 C114 69 122 85 123 101 C124 111 121 119 116 128 C128 122 140 126 145 138 C150 151 143 165 132 175 C120 185 104 190 90 186 C75 182 65 172 64 160 C62 148 69 136 80 128 C88 122 92 115 92 106 C92 88 96 68 101 54 Z"/>
+<path class="flame-core" d="M101 111 C110 123 114 136 112 148 C119 147 124 152 124 160 C124 171 115 179 104 181 C93 182 84 175 84 165 C84 156 91 150 96 143 C99 136 99 124 101 111 Z"/>
+</svg></i><span>200</span></div>
+      <div><i class="lvl white"><svg class="flame-svg" viewBox="0 0 200 230" aria-hidden="true">
+<path class="flame-glow" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer" d="M100 7 C113 25 124 46 127 66 C130 84 126 99 117 111 C130 105 143 94 151 77 C157 92 154 109 146 123 C160 118 174 126 180 141 C186 158 181 177 166 189 C166 205 152 218 133 225 C112 233 82 232 61 221 C43 212 31 197 30 179 C22 166 24 148 32 134 C39 121 51 114 64 112 C55 101 51 88 52 75 C63 84 73 96 79 110 C76 91 80 69 88 50 C94 34 98 18 100 7 Z"/>
+<path class="flame-outer flame-side-left" d="M52 75 C45 86 41 100 42 115 C43 130 49 143 59 151 C61 139 66 128 75 118 C67 108 59 94 52 75 Z"/>
+<path class="flame-outer flame-side-right" d="M151 77 C159 89 163 103 161 117 C159 132 153 144 143 152 C141 139 136 128 126 118 C135 108 143 94 151 77 Z"/>
+<path class="flame-inner" d="M101 54 C114 69 122 85 123 101 C124 111 121 119 116 128 C128 122 140 126 145 138 C150 151 143 165 132 175 C120 185 104 190 90 186 C75 182 65 172 64 160 C62 148 69 136 80 128 C88 122 92 115 92 106 C92 88 96 68 101 54 Z"/>
+<path class="flame-core" d="M101 111 C110 123 114 136 112 148 C119 147 124 152 124 160 C124 171 115 179 104 181 C93 182 84 175 84 165 C84 156 91 150 96 143 C99 136 99 124 101 111 Z"/>
+</svg></i><span>300+</span></div>
+    </div>
+  </main>
+</div>
+
+<div class="shade" id="shade"></div>
+<div class="modal" id="resetModal">
+  <div class="modalIcon">!</div>
+  <h2>Reiniciar sequência</h2>
+  <p>Sua sequência será restaurada para 0, mesmo que você não tenha perdido.</p>
+  <p>Tem certeza que deseja continuar?</p>
+  <div class="modalBtns">
+    <button class="yes" id="yes">SIM</button>
+    <button class="no" id="no">NÃO</button>
+  </div>
+</div>
+
+<div class="modal debugModal" id="debugModal">
+  <button class="debugAccessClose" id="debugAccessClose" aria-label="Fechar modo debug">×</button>
+  <div class="gear">⚙</div>
+  <h2>Modo Debug</h2>
+  <p>Digite a senha de 6 caracteres para acessar o modo debug.</p>
+  <input id="pass" maxlength="6" placeholder="Senha (6 caracteres)" autocomplete="off">
+  <button class="enter" id="enter">ENTRAR</button>
+  <div class="error" id="error"></div>
+</div>
+
+<div class="debugPanel" id="debugPanel">
+  <button class="debugClose" id="debugClose" aria-label="Fechar modo debug">×</button>
+  <div class="gear ok" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="28" fill="none" stroke="#12d77a" stroke-width="4"/><path d="M17 33.5 L27 43 L48 20" fill="none" stroke="#12d77a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <h2>Debug Ativado!</h2>
+  <p>Agora você pode aumentar sua sequência manualmente.</p>
+  <button class="plus" id="plus">＋ +1 DIA</button>
+  <button class="debugFireBtn" id="debugFire">🔥 APAGAR FOGO</button>
+  <button class="leave" id="leave">SAIR DO DEBUG</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#030507;color:#fff;font-family:Arial,Helvetica,sans-serif}body{display:flex;justify-content:center}.app{width:min(100%,440px);min-height:100vh;background:radial-gradient(circle at 50% 38%,#0a0d12 0,#030507 52%,#010203 100%);position:relative;overflow:hidden}header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;position:relative}.brand{display:flex;align-items:center;gap:12px;font-size:24px;letter-spacing:.3px}.dots{border:0;background:none;color:#fff;font-size:31px;line-height:1;cursor:pointer;padding:4px}.mini-flame,.big-flame,.lvl{position:relative;display:inline-flex;align-items:center;justify-content:center}
+.mini-flame{width:34px;height:42px}
+.hero{text-align:center;padding-top:25px}.big-flame{width:190px;height:215px;--flame:#ffd21a;filter:drop-shadow(0 0 16px color-mix(in srgb,var(--flame,#ffd21a) 45%,transparent));animation:dance 2.2s ease-in-out infinite alternate;transform-origin:50% 88%}
+.flame-svg{width:100%;height:100%;overflow:visible;display:block}.flame-outer,.flame-inner,.flame-core,.flame-glow{transition:fill .35s ease,opacity .35s ease}
+.flame-outer{fill:var(--flame,#ffd21a)}
+.flame-inner{fill:var(--flame-inner,#ff8a00)}
+.flame-core{fill:var(--flame-core,#fff4df)}
+.big-flame.white-skin .flame-inner,.lvl.white .flame-inner{fill:#8d9398}
+.big-flame.white-skin .flame-core,.lvl.white .flame-core{fill:#fff4df}
+.flame-glow{fill:var(--flame,#ffd21a);opacity:.28;filter:blur(9px)}
+.count{font-size:60px;font-weight:800;line-height:1;margin-top:7px;color:var(--flame,#ffd21a);text-shadow:0 0 18px color-mix(in srgb,var(--flame,#ffd21a) 48%,transparent)}
+.subtitle{font-size:22px;font-weight:700;color:#d5d8dd;margin-top:6px}
+.midnight{margin:28px 42px 20px;border:1px solid #273746;border-radius:13px;height:40px;display:flex;align-items:center;justify-content:center;gap:8px;color:#d9dde2;font-size:13px;background:#070b10}
+.midnight b{font-weight:500}
+.today{display:block;width:calc(100% - 48px);margin:0 auto;border:0;border-radius:25px;height:58px;background:linear-gradient(90deg,#ff1744,#ff2348);color:#fff;font-weight:800;font-size:17px;box-shadow:0 8px 25px rgba(255,23,68,.18);cursor:pointer}
+.levels{display:flex;justify-content:space-around;align-items:start;margin:40px 15px 0;color:#cbd0d8;font-weight:700}
+.levels>div{display:flex;flex-direction:column;align-items:center;gap:7px;font-size:14px}
+.lvl{width:34px;height:36px}
+.lvl .flame-svg{width:100%;height:100%}
+.lvl.red{--level:#ff1744}.lvl.purple{--level:#9b20ff}.lvl.blue{--level:#20baff}.lvl.white{--level:#fff}
+.lvl{color:var(--level,#ffd21a)}
+.lvl .flame-outer{fill:var(--level,#ffd21a)}
+.menu{display:none;position:absolute;right:12px;top:60px;background:#101821;border:1px solid #1f2b36;border-radius:14px;box-shadow:0 15px 35px #000b;z-index:5;overflow:hidden;width:205px}
+.menu.open{display:block}
+.menu button{width:100%;padding:16px 15px;background:none;border:0;color:#fff;text-align:center;font-size:15px;display:flex;gap:10px;align-items:center;justify-content:center;cursor:pointer}
+.menu button:hover{background:#17212b}
+.soundBtn{font-size:14px!important;color:#dfe6ee!important}
+.shade{display:none;position:fixed;inset:0;background:#0009;z-index:10}
+.shade.on{display:block}
+.modal,.debugPanel{display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:min(90%,370px);background:#0c131b;border:1px solid #293745;border-radius:18px;padding:26px 24px;text-align:center;z-index:11;box-shadow:0 25px 70px #000}
+.modal.show,.debugPanel.show{display:block}
+.debugPanel{margin:0 auto}
+.modal h2,.debugPanel h2{margin:7px 0 14px;font-size:24px}
+.modal p,.debugPanel p{color:#d4d8dd;line-height:1.4;margin:8px 10px}
+.modalIcon{margin:auto;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#ff3151;font-size:28px;font-weight:800}
+.modalBtns{display:flex;gap:12px;margin-top:24px}
+.modalBtns button{flex:1;height:53px;border:0;border-radius:28px;color:#fff;font-weight:800;font-size:16px}
+.yes{background:#ff334b}.no{background:#11c66a}.gear{font-size:44px}
+.gear.ok{width:50px;height:50px;margin:auto;border:3px solid #12d77a;border-radius:50%;display:grid;place-items:center;color:#12d77a}
+.debugModal input{width:100%;height:48px;margin:18px 0 12px;border:1px solid #506070;border-radius:12px;background:#080d12;color:#fff;padding:0 14px;font-size:15px;outline:none}
+.enter,.plus,.leave{width:100%;height:50px;border:0;border-radius:25px;font-weight:800;font-size:15px}
+.enter{background:#273442;color:#9da7b2}.plus{background:#4f55ff;color:#fff;font-size:17px;margin-top:14px}
+.leave{margin-top:12px;background:#0a1118;border:1px solid #34424e;color:#dbe1e7}
+.error{color:#ff5267;min-height:18px;margin-top:7px}.debugPanel{display:none}.debugPanel.show{display:block}
+@keyframes dance{from{transform:translateY(0) scale(1) rotate(-1deg)}to{transform:translateY(-7px) scale(1.035) rotate(2deg)}}
+.risk{margin:12px 42px 0;padding:10px 12px;border:1px solid #4a252d;border-radius:12px;background:#18090d;color:#ff6678;font-size:13px;font-weight:700;display:none}.risk.show{display:block}
+.risk{margin:12px 42px 0;padding:10px 12px;border:1px solid #4a252d;border-radius:12px;background:#18090d;color:#ff6678;font-size:13px;font-weight:700;display:none}.risk.show{display:block}
+
+/* Fogo apagado no modo debug */
+.big-flame.extinguished,.mini-flame.extinguished{--flame:#747a80!important;--flame-inner:#8d9398!important;--flame-core:#d4d7da!important;filter:drop-shadow(0 0 7px rgba(170,175,180,.16))!important;animation:none}
+.big-flame.extinguished .flame-glow{opacity:.06}
+.extinguished .flame-outer{fill:#747a80!important}.extinguished .flame-inner{fill:#969ba0!important}.extinguished .flame-core{fill:#d9dcdf!important}
+.debugFireBtn{width:100%;height:50px;border:0;border-radius:25px;font-weight:800;font-size:15px;margin-top:14px;background:#555b61;color:#fff}
+.debugFireBtn.on{background:#ff1744}
+
+.flame-highlight{fill:#ffc98f;opacity:.82;transition:fill .35s ease}
+.flame-base{fill:#8f1d45;opacity:.78;transition:fill .35s ease}
+.big-flame{width:205px;height:230px;transform-origin:50% 70%}
+.big-flame .flame-svg{overflow:visible}
+.mini-flame .flame-highlight,.lvl .flame-highlight{opacity:.78}
+.mini-flame .flame-base,.lvl .flame-base{opacity:.75}
+.extinguished .flame-highlight{fill:#b7bcc1!important;opacity:.55}
+.extinguished .flame-base{fill:#62676c!important;opacity:.8}
+
+/* Ajustes finais do fogo: centralizado, compacto e sem a base "bugada". */
+.hero{padding-top:18px;display:flex;flex-direction:column;align-items:center}
+.big-flame{width:196px;height:220px;margin:0 auto;transform-origin:50% 68%;overflow:visible}
+.big-flame .flame-svg{display:block;width:100%;height:100%;overflow:visible}
+.flame-base{fill:#7f2940;opacity:.78;transition:fill .35s ease}
+.flame-highlight{fill:#ffc58f;opacity:.84;transition:fill .35s ease}
+.flame-core{fill:#fff3dc}
+.count{margin-top:2px}
+.subtitle{margin-top:4px}
+.levels{margin-top:34px}
+
+
+/* Refinos finais: fogo inspirado na referência e alinhamento do ícone de debug. */
+.gear.ok{
+  width:64px;height:64px;margin:0 auto;
+  border:0;border-radius:0;background:transparent;
+  display:grid;place-items:center;color:#12d77a;
+}
+.gear.ok svg{display:block;width:64px;height:64px;overflow:visible}
+
+/* Cada nível mantém o miolo e a base coerentes com a cor do próprio fogo. */
+.lvl.yellow{--level:#ffd21a;--flame-inner:#ffad12;--flame-highlight:#ffc98f;--flame-base:#8f2940}
+.lvl.red{--level:#ff1744;--flame-inner:#ff5a22;--flame-highlight:#ff9a78;--flame-base:#8f203b}
+.lvl.purple{--level:#9b20ff;--flame-inner:#c44dff;--flame-highlight:#e1a2ff;--flame-base:#74245f}
+.lvl.blue{--level:#20baff;--flame-inner:#48cfff;--flame-highlight:#a1e8ff;--flame-base:#225a8f}
+.lvl.white{--level:#fff;--flame-inner:#8d9398;--flame-highlight:#d7dadd;--flame-base:#62676c}
+.lvl .flame-inner{fill:var(--flame-inner)!important}
+.lvl .flame-highlight{fill:var(--flame-highlight)!important}
+.lvl .flame-base{fill:var(--flame-base)!important}
+
+/* Forma mais próxima da referência: ponta central definida e laterais levemente pontudas,
+   mas com curvas suaves e sem o aspecto serrilhado. */
+.big-flame .flame-outer,
+.mini-flame .flame-outer,
+.lvl .flame-outer{stroke-linejoin:round;stroke-linecap:round}
+.big-flame .flame-glow{opacity:.25}
+
+/* O som ambiente é discreto; evita sensação de ruído constante. */
+
+/* Sequência zerada: fogo principal fica apagado/cinza. */
+.big-flame.zero,.mini-flame.zero{
+  --flame:#777c82!important;
+  --flame-inner:#8d9398!important;
+  --flame-core:#d4d7da!important;
+  filter:drop-shadow(0 0 7px rgba(170,175,180,.14))!important;
+}
+.zero .flame-glow{fill:#8d9398!important;opacity:.08!important}
+.zero .flame-outer{fill:#777c82!important}
+.zero .flame-inner{fill:#8d9398!important}
+.zero .flame-highlight{fill:#b7bcc1!important}
+.zero .flame-base{fill:#62676c!important}
+.zero .flame-core{fill:#d9dcdf!important}
+.count.zero{color:#777c82!important;text-shadow:0 0 14px rgba(170,175,180,.18)!important}
+
+/* Fogo corrigido: sem a faixa/oval que aparecia sobre a chama. A referência usa apenas
+   silhueta amarela, miolo laranja e núcleo claro, com brilho suave atrás. */
+.flame-base,.flame-highlight{display:none!important}
+.big-flame{width:196px;height:220px}
+.big-flame .flame-glow{opacity:.20;filter:blur(8px)}
+.big-flame .flame-outer{filter:none}
+.flame-inner{opacity:1}
+.flame-core{opacity:1}
+@keyframes dance{from{transform:translateY(0) scale(1) rotate(-.5deg)}to{transform:translateY(-3px) scale(1.015) rotate(.7deg)}}
+
+/* Ajustes pedidos na referência */
+.debugPanel{position:fixed}
+.debugClose{position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;border-radius:50%;background:transparent;color:#fff;font-size:34px;line-height:36px;font-weight:300;cursor:pointer;z-index:2}
+.debugClose:hover{background:#ffffff12}
+/* Labaredas laterais mais grossas, mantendo a ponta central definida. */
+.big-flame .flame-outer,.mini-flame .flame-outer,.lvl .flame-outer{stroke-width:0}
+.lvl.white .flame-inner{fill:#8d9398!important}
+
+.debugModal{position:fixed}.debugAccessClose{position:absolute;right:14px;top:10px;width:42px;height:42px;border:0;border-radius:50%;background:transparent;color:#fff;font-size:32px;line-height:42px;cursor:pointer;z-index:2}.debugAccessClose:active{background:#1b2732}
